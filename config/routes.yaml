@@ -1,3 +1,13 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+#
+#home:
+#  path: /
+#  controller: App\Controller\UserController::home
+#
+#
+#inscription:
+#  path: /inscription/blog
+#  controller: App\Controller\UserController::inscription

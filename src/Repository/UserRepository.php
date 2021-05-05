@@ -36,6 +36,17 @@ class UserRepository extends ServiceEntityRepository
     }
     */
 
+    public function connexionUser($login, $mdp){
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.login = :login')
+            ->andWhere('u.mdp = :mdp')
+            ->setParameter('login', $login)
+            ->setParameter('mdp', password_verify($mdp, 'u.mdp'))
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
     /*
     public function findOneBySomeField($value): ?User
     {

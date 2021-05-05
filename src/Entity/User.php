@@ -33,7 +33,7 @@ class User
     private $sexe;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, unique=true)
      */
     private $login;
 
@@ -51,6 +51,11 @@ class User
      * @ORM\Column(type="string", length=15)
      */
     private $statut;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="user")
+     */
+    private $article;
 
     public function getId(): ?int
     {
@@ -137,6 +142,18 @@ class User
     public function setStatut(string $statut): self
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    public function getArticle(): ?Article
+    {
+        return $this->article;
+    }
+
+    public function setArticle(?Article $article): self
+    {
+        $this->article = $article;
 
         return $this;
     }

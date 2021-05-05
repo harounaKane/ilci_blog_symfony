@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} home ! {% endblock %}
+
+{% block body %}
+    <h2 class="bg-ligth p-3 text-center"> Liste des membres </h2>
+    <table class="table table-striped">
+        <tr class="thead-dark">
+            <th>Civilité</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>login</th>
+            <th>date</th>
+            <th>Action</th>
+        </tr>
+        {% for membre in membres %}
+            <tr>
+                <td> {{ membre.sexe }} </td>
+                <td> {{ membre.prenom }} </td>
+                <td> {{ membre.nom }} </td>
+                <td> {{ membre.login }} </td>
+                <td> {{ membre.createat | date("d M Y à H:i:s") }} </td>
+                <td>
+                    <a href="{{ path('edit', {'id': membre.id} ) }}">
+                        <i class="fa fa-edit"></i>
+                    </a> -
+                    <a href="{{ path('delete', {'id': membre.id} ) }}">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
