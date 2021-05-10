@@ -25,13 +25,8 @@ class UserController extends AbstractController
      * @Route ("/", name="home")
      */
     public function home(){
-        $prenom = "Dupond";
-        $nom = "Jeans";
 
-        return $this->render("user/index.html.twig", [
-            "prenomUser" => $prenom,
-            "nom" => $nom
-        ]);
+        return $this->render("user/index.html.twig");
     }
 
     /**
