@@ -60,7 +60,7 @@ class UserController extends AbstractController
                 return $this->render("user/inscription.html.twig", ["form" => $form->createView()]);
             }
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('connexion');
         }
 
         return $this->render("user/inscription.html.twig", ["form" => $form->createView()]);

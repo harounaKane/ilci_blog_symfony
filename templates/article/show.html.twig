@@ -10,9 +10,24 @@
 
     <hr>
 
-    <h3>Commentaires <i class="fas fa-comments"></i></h3>
 
+    {% if comments %}
+        <h3>Commentaires <i class="fas fa-comments"></i></h3>
+        {% for comment in comments %}
+            <div class="my-5">
+                <div class="m-2">
+                    Rédigé par {{ comment.user.prenom }}
+                    le {{ comment.createat | date("d/m/Y ") }}
+                </div>
+                <div class="">{{ comment.comment }}</div>
+            </div>
+        {% endfor %}
+    {% endif %}
 
+    {{ form_start(form_comment) }}
+        {{ form_widget(form_comment) }}
+        <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
+    {{ form_end(form_comment) }}
 
     <a href="{{ path('article_index') }}">back to list</a>
 
