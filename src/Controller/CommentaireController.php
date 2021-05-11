@@ -6,6 +6,7 @@ use App\Entity\Commentaire;
 use App\Form\CommentaireType;
 use App\Repository\CommentaireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -90,5 +91,19 @@ class CommentaireController extends AbstractController
         }
 
         return $this->redirectToRoute('commentaire_index');
+    }
+
+    /**
+     * @Route ("/likeCommentaire/{id}", name="likeCommentaire", methods={"GET"})
+     */
+    public function likeCommentaire(Request $request, Commentaire $commentaire){
+
+        $commentaire->setLikeComment( $commentaire->getLikeComment() + 1 );
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush();
+
+        return new JsonResponse([$commentaire->getLikeComment()]);
+
     }
 }

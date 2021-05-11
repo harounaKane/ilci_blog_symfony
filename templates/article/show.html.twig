@@ -10,7 +10,6 @@
 
     <hr>
 
-
     {% if comments %}
         <h3>Commentaires <i class="fas fa-comments"></i></h3>
         {% for comment in comments %}
@@ -20,7 +19,12 @@
                     le {{ comment.createat | date("d/m/Y ") }}
                 </div>
                 <div class="">{{ comment.comment }}</div>
+                <button class="mt-2 like" value="{{ comment.id }}">
+                    <i class="fa fa-thumbs-up"></i>
+                </button>
+                <span class="ml-3" id="{{ comment.id }}">{{ comment.likeComment }}</span>
             </div>
+            <hr>
         {% endfor %}
     {% endif %}
 

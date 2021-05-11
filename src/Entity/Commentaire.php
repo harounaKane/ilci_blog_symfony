@@ -39,6 +39,11 @@ class Commentaire
      */
     private $article;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $likeComment;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,6 +93,18 @@ class Commentaire
     public function setArticle(?Article $article): self
     {
         $this->article = $article;
+
+        return $this;
+    }
+
+    public function getLikeComment(): ?int
+    {
+        return $this->likeComment;
+    }
+
+    public function setLikeComment(?int $likeComment): self
+    {
+        $this->likeComment = $likeComment;
 
         return $this;
     }
