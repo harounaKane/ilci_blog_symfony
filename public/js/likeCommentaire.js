@@ -8,8 +8,7 @@ $('.like').click( function () {
         data: {id: id},
         success: function (resultat){
             let res = JSON.parse(resultat);
-            $("#"+id).html(res);
-            console.log(res);
+            $("#"+id).html(res)
         }
     });
 

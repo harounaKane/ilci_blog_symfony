@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d3cf79c-1002-4a0e-919e-0dc29e4f856b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/likeCommentaire.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/likeCommentaire.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/likeCommentaire.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CommentaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommentaireController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Commentaire.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Commentaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +163,8 @@
       <workItem from="1620115228122" duration="27933000" />
       <workItem from="1620568248436" duration="45000" />
       <workItem from="1620590342936" duration="1543000" />
-      <workItem from="1620633161699" duration="22042000" />
+      <workItem from="1620633161699" duration="23233000" />
+      <workItem from="1620806251084" duration="2765000" />
     </task>
     <servers />
   </component>

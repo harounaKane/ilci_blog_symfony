@@ -98,12 +98,16 @@ class CommentaireController extends AbstractController
      */
     public function likeCommentaire(Request $request, Commentaire $commentaire){
 
-        $commentaire->setLikeComment( $commentaire->getLikeComment() + 1 );
+        if( $request->isXmlHttpRequest() ){
+            $commentaire->setLikeComment( $commentaire->getLikeComment() + 1 );
 
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
 
-        return new JsonResponse([$commentaire->getLikeComment()]);
+            return new JsonResponse( [$commentaire->getLikeComment()] );
+        }
+
+        return $this->redirectToRoute("article_show", ['id' => $commentaire->getArticle()->getId()] );
 
     }
 }

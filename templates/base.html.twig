@@ -27,6 +27,7 @@
                 {% if app.session.get('login') %}
                     <a href="{{ path('listeMembre') }}" class="btn btn-primary">Liste des membres</a>
                     <a href="{{ path('article_index') }}" class="btn btn-primary">Articles</a>
+                    <a href="" class="btn btn-primary">Commentaires</a>
                     <a href="{{ path('deconnexion') }}" class="btn btn-danger">Déconnexion</a>
                 {% else %}
                     <a href="{{ path('inscription') }}" class="btn btn-primary">Inscription</a>
